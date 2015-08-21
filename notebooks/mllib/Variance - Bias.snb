@@ -1,0 +1,217 @@
+{
+  "metadata" : {
+    "name" : "Variance - Bias",
+    "user_save_timestamp" : "1970-01-01T01:00:00.000Z",
+    "auto_save_timestamp" : "1970-01-01T01:00:00.000Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "customLocalRepo" : null,
+    "customRepos" : null,
+    "customDeps" : [ "org.apache.spark % spark-mllib_2.10 % 1.3.1", "com.cra.figaro % figaro % 2.1.0.0", "- org.apache.spark % spark-core_2.10 % _", "- org.apache.hadoop % _ % _" ],
+    "customImports" : null,
+    "customSparkConf" : null
+  },
+  "cells" : [ {
+    "metadata" : { },
+    "cell_type" : "markdown",
+    "source" : "## Generate some data with a simple model"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.rdd.RDD\nimport com.cra.figaro.library.atomic.continuous._",
+    "outputs" : [ ]
+  }, {
+    "metadata" : { },
+    "cell_type" : "markdown",
+    "source" : "### System generating x values (uniform)"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "val generatorModelX = Uniform(0.0, 1.0)\n\nval generateOneX = () => {\n  generatorModelX.generate()\n  generatorModelX.value\n}",
+    "outputs" : [ ]
+  }, {
+    "metadata" : { },
+    "cell_type" : "markdown",
+    "source" : "### System generating y values from x"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "val generatorModelZ = Normal(0.0, 0.25)\n\nval generateOneY = (x: Double) => {\n  generatorModelZ.generate()\n  x*x + generatorModelZ.value\n}",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.mllib.linalg.Vectors\nimport org.apache.spark.mllib.regression.LabeledPoint",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true
+    },
+    "cell_type" : "markdown",
+    "source" : "### Generate the universe (1000 items)"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "val collection = (1 to 1000).map(i => {\n                   val x = generateOneX().toDouble\n                   val y = generateOneY(x).toDouble\n                   (x, y)\n  })",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "val universe = sparkContext.parallelize( collection )\nuniverse.cache()\nuniverse.count",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true
+    },
+    "cell_type" : "markdown",
+    "source" : "### Take a sample of this universe (10 items)"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "val sample = () => universe.sample(true, 0.01)\n\nval toPoints0 = ( xy: (Double, Double)) => \n  LabeledPoint(xy._2, Vectors.dense(Array(1.0)))\n\nval toPoints1 = ( xy: (Double, Double)) => \n  LabeledPoint(xy._2, Vectors.dense(Array(xy._1, 1.0)))\n\nval toPoints2 = ( xy: (Double, Double)) => \n  LabeledPoint(xy._2, Vectors.dense(Array(xy._1*xy._1, xy._1, 1.0)))\n\nval toPoints3 = ( xy: (Double, Double)) => \n  LabeledPoint(xy._2, Vectors.dense(Array(xy._1*xy._1*xy._1, xy._1*xy._1, xy._1, 1.0)))",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "val data = sample().map(toPoints1)\ndata.map(lp => (lp.features(0), lp.label)).collect.toList",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true
+    },
+    "cell_type" : "markdown",
+    "source" : "### Linear regression"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.mllib.optimization.{LBFGS, LeastSquaresGradient, SimpleUpdater}\nimport org.apache.spark.mllib.regression.LinearRegressionModel",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "val train = (dta: RDD[LabeledPoint]) => {\n  val one = dta.first\n  val numCorrections = 10\n  val convergenceTol = 1e-4\n  val maxNumIterations = 100\n  val regParam = 0.1\n  val initialWeightsWithIntercept = Vectors.dense(new Array[Double](one.features.size))\n  \n  val (weightsWithIntercept, loss) = LBFGS.runLBFGS(\n  dta.map(lp => (lp.label, lp.features)),\n  new LeastSquaresGradient(),\n  new SimpleUpdater(),\n  numCorrections,\n  convergenceTol,\n  maxNumIterations,\n  regParam,\n  initialWeightsWithIntercept)\n  new LinearRegressionModel(weightsWithIntercept, 0.0)\n}",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "val model = train(data)",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "val safe = new java.io.Serializable {\n  val localModel = model\n  val pred = (p: LabeledPoint) => localModel.predict(p.features)\n  val localData = data\n  \n  localModel.predict(localData.map(_.features))\n  val valuesAndPreds = localData.map { point =>\n    val prediction = pred(point)\n    (point.label, prediction)\n  }\n  val MSE = valuesAndPreds.map{case(v, p) => math.pow((v - p), 2)}.mean()\n}\nimport safe._",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "safe.MSE",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true
+    },
+    "cell_type" : "markdown",
+    "source" : "### Try 0, 1st, 2nd & 3rd order functions on 100 universe samples"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.mllib.regression.LinearRegressionModel\nimport org.apache.spark.rdd.RDD\n\nval MSE = (model: LinearRegressionModel, dta: RDD[LabeledPoint]) => {\n  val localModel = model\n  val pred = (p: LabeledPoint) => localModel.predict(p.features)\n  val localData = dta\n  \n  localModel.predict(localData.map(_.features))\n  val valuesAndPreds = localData.map { point =>\n    val prediction = pred(point)\n    (point.label, prediction)\n                                     }\n  valuesAndPreds.map{case(v, p) => math.pow((v - p), 2)}.mean() \n}",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "case class ModelsMSE(mses: Array[Double])\n\nval errors = (1 to 20).map{ i =>\n                            \n  val data = universe.sample(true, 0.01)                            \n  val (data0, data1, data2, data3) = (data.map(toPoints0), data.map(toPoints1), data.map(toPoints2), data.map(toPoints3))\n  \n  val test = universe\n  val (test0, test1, test2, test3) = (test.map(toPoints0), test.map(toPoints1), test.map(toPoints2), test.map(toPoints3))\n              \n  val model0 = train(data0)\n  val model1 = train(data1)\n  val model2 = train(data2)\n  val model3 = train(data3)\n\n              \n  (ModelsMSE(Array(MSE(model0, data0), MSE(model1, data1), MSE(model2, data2), MSE(model3, data3))),\n   ModelsMSE(Array(MSE(model0, test0), MSE(model1, test1), MSE(model2, test2), MSE(model3, test3))))\n}",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false
+    },
+    "cell_type" : "code",
+    "source" : "case class Error(order: Int, bestCount: Int, sse: Double, count: Int) {\n  def addBest(se: Double) = Error(order, bestCount+1, sse+se, count+1)\n  def add(se: Double) = Error(order, bestCount, sse+se, count+1)\n}\n\nval zeros = (0 to 3).map(i => Error(i, 0, 0.0, 0))\n\nval errs = ((zeros) /: errors.map(_._2))((acc, err) => {\n                               val bestIdx = err.mses.zipWithIndex.minBy(_._1)._2\n                               acc.zipWithIndex.map{\n                               case (e, idx) if (idx == bestIdx) => e.addBest(err.mses(bestIdx))\n                               case (e, idx) => e.add(err.mses(idx))\n                               }}\n                               )\nval trainErrs = ((zeros) /: errors.map(_._1))((acc, err) => {\n                               val bestIdx = err.mses.zipWithIndex.minBy(_._1)._2\n                               acc.zipWithIndex.map{\n                               case (e, idx) if (idx == bestIdx) => e.addBest(err.mses(bestIdx))\n                               case (e, idx) => e.add(err.mses(idx))\n                               }}\n                               )\n\n<table>\n<tr><td>Model Order</td><td># Best model</td><td>Mean Squared Error</td>\n<td>Training best model</td><td>Training MSE</td></tr>\n{for (i <- 0 to 3) yield \n <tr><td>{i}</td><td>{errs(i).bestCount}</td><td>{errs(i).sse/errs(i).count}</td>\n <td>{trainErrs(i).bestCount}</td><td>{trainErrs(i).sse/trainErrs(i).count}</td></tr>\n}\n\n </table>\n",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  } ],
+  "nbformat" : 4
+}
