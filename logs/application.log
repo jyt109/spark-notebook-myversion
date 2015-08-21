@@ -6413,3 +6413,211 @@ save at path student_1.snb
 2015-08-21 18:29:49,781 - [INFO] - from application in play-akka.actor.default-dispatcher-30 
 Loading notebook at path student_1.snb
 
+2015-08-21 18:40:54,281 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:40:54,282 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:40:54,426 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:40:54,578 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:40:54,579 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:40:54,579 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:40:54,580 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Termination of op calculator
+
+2015-08-21 18:41:06,859 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:06,860 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Termination of op calculator
+
+2015-08-21 18:41:07,388 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:07,389 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Termination of op calculator
+
+2015-08-21 18:41:07,934 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:07,935 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Termination of op calculator
+
+2015-08-21 18:41:08,459 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:08,460 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Termination of op calculator
+
+2015-08-21 18:41:10,530 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:10,531 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Termination of op calculator
+
+2015-08-21 18:41:15,556 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:15,558 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Termination of op calculator
+
+2015-08-21 18:41:16,230 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:16,231 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Termination of op calculator
+
+2015-08-21 18:41:23,867 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:23,868 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:23,885 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:23,924 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:23,925 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:23,926 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Termination of op calculator
+
+2015-08-21 18:41:27,500 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:27,501 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:27,516 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:27,552 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:27,553 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:41:27,553 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Termination of op calculator
+
+2015-08-21 18:41:49,829 - [INFO] - from application in play-akka.actor.default-dispatcher-31 
+SAVE → student_1.snb
+
+2015-08-21 18:41:49,833 - [INFO] - from application in play-akka.actor.default-dispatcher-31 
+save at path student_1.snb
+
+2015-08-21 18:41:49,837 - [INFO] - from application in play-akka.actor.default-dispatcher-31 
+Loading notebook at path student_1.snb
+
+2015-08-21 18:42:08,499 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:42:08,500 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:42:08,609 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:42:08,739 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:42:08,740 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:42:08,741 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+Sending info to websockets List(notebook.server.WebSockWrapperImpl@37cef6b3) in notebook.server.CalcWebSocketService$CalcActor$$anon$4@d745b20
+
+2015-08-21 18:42:08,741 - [DEBUG] - from application in NotebookServer-akka.actor.default-dispatcher-15 
+Termination of op calculator
+
+2015-08-21 18:42:57,923 - [ERROR] - from application in NotebookServer-akka.actor.default-dispatcher-3 
+
+
+! @6n81bi8cb - Internal server error, for (GET) [/clusters?_=1440176354897] ->
+
+play.api.Application$$anon$1: Execution exception[[AskTimeoutException: Recipient[Actor[akka://NotebookServer/user/$a#912470412]] had already been terminated.]]
+	at play.api.Application$class.handleError(Application.scala:296) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.api.DefaultApplication.handleError(Application.scala:402) [com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$14$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:205) [com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$14$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:202) [com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:185) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.util.Try$.apply(Try.scala:161) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.util.Failure.recover(Try.scala:185) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:46) [com.typesafe.play.play-iteratees_2.10-2.4.0-M1.jar:2.4.0-M1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.processBatch$1(BatchingExecutor.scala:67) [org.spark-project.akka.akka-actor_2.10-2.3.4-spark.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:82) [org.spark-project.akka.akka-actor_2.10-2.3.4-spark.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) [org.spark-project.akka.akka-actor_2.10-2.3.4-spark.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) [org.spark-project.akka.akka-actor_2.10-2.3.4-spark.jar:na]
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:58) [org.spark-project.akka.akka-actor_2.10-2.3.4-spark.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41) [org.spark-project.akka.akka-actor_2.10-2.3.4-spark.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [org.spark-project.akka.akka-actor_2.10-2.3.4-spark.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [org.scala-lang.scala-library-2.10.4.jar:na]
+Caused by: akka.pattern.AskTimeoutException: Recipient[Actor[akka://NotebookServer/user/$a#912470412]] had already been terminated.
+	at akka.pattern.AskableActorRef$.ask$extension(AskSupport.scala:132) ~[org.spark-project.akka.akka-actor_2.10-2.3.4-spark.jar:na]
+	at akka.pattern.AskableActorRef$.$qmark$extension(AskSupport.scala:144) ~[org.spark-project.akka.akka-actor_2.10-2.3.4-spark.jar:na]
+	at controllers.Application$$anonfun$clusters$1.apply(Application.scala:198) ~[noootsab.spark-notebook-0.6.0-scala-2.10.4-spark-1.4.1-hadoop-2.2.0.jar:0.6.0-scala-2.10.4-spark-1.4.1-hadoop-2.2.0]
+	at controllers.Application$$anonfun$clusters$1.apply(Application.scala:196) ~[noootsab.spark-notebook-0.6.0-scala-2.10.4-spark-1.4.1-hadoop-2.2.0.jar:0.6.0-scala-2.10.4-spark-1.4.1-hadoop-2.2.0]
+	at play.api.mvc.ActionBuilder$$anonfun$async$1.apply(Action.scala:481) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.api.mvc.ActionBuilder$$anonfun$async$1.apply(Action.scala:481) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:556) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:555) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:518) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:130) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:129) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:128) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at scala.Option.map(Option.scala:145) ~[org.scala-lang.scala-library-2.10.4.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:128) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:121) ~[com.typesafe.play.play_2.10-2.3.7.jar:2.3.7]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) ~[com.typesafe.play.play-iteratees_2.10-2.4.0-M1.jar:2.4.0-M1]
+	at play.api.libs.iteratee.DoneIteratee$$anonfun$mapM$2.apply(Iteratee.scala:705) ~[com.typesafe.play.play-iteratees_2.10-2.4.0-M1.jar:2.4.0-M1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[org.scala-lang.scala-library-2.10.4.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[org.scala-lang.scala-library-2.10.4.jar:na]
+	... 6 common frames omitted
+
+2015-08-21 18:43:49,813 - [INFO] - from application in play-akka.actor.default-dispatcher-33 
+SAVE → student_1.snb
+
+2015-08-21 18:43:49,817 - [INFO] - from application in play-akka.actor.default-dispatcher-33 
+save at path student_1.snb
+
+2015-08-21 18:43:49,820 - [INFO] - from application in play-akka.actor.default-dispatcher-33 
+Loading notebook at path student_1.snb
+
+2015-08-21 18:55:50,861 - [INFO] - from application in play-akka.actor.default-dispatcher-34 
+SAVE → student_1.snb
+
+2015-08-21 18:55:50,864 - [INFO] - from application in play-akka.actor.default-dispatcher-34 
+save at path student_1.snb
+
+2015-08-21 18:55:50,866 - [INFO] - from application in play-akka.actor.default-dispatcher-34 
+Loading notebook at path student_1.snb
+
